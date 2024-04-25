@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S2.1. Exercicis Bàsics</title>
+</head>
+<body>
+  <h3>Bloc 1.1: Arrow functions</h3>
+    <details>
+      <summary>Nivell 1 Exercici 1</summary>
+      <p>Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma.<br> 
+        Converteix-la en una funció de fletxa. Per exemple: function add(a, b) {return a + b;}.</p>
+        <p>
+          <input id="num1" type="number" placeholder="Introduzca un número" />
+        </p>
+        <p>
+          <input id="num2" type="number" placeholder="Introduzca un número" />
+        </p>
+        <button onclick="add(num1.value, num2.value)">Calcular</button>
+        <p id="resultado"></p>
+    </details>
+    <details>
+    <summary>Nivell 1 Exercici 2</summary>
+      <p>Funció de fletxa sense paràmetres: Crea una funció de fletxa anomenada randomNumber que no<br> 
+        necessiti paràmetres i que retorni un número aleatori entre 0 i 100.</p>
+        
+        <button onclick="randomNumber()">Número aleatorio</button>
+        <p id="resultado1"></p>
+    </details>
+    <details>
+      <summary>Nivell 1 Exercici 3</summary>
+        <p>Ús de 'this' en les funcions de fletxa: Crea una classe person que tingui una propietat name <br>
+          i una funció greet que utilitzi una funció de fletxa. La funció ha d'imprimir una salutació<br> 
+          que inclogui el nom de la persona. Per exemple: console.log(Hola, ${this.name});.</p>        
+        <button onclick="person1.greet()">Saluda!</button>
+        <p id="resultado2"></p>
+    </details>
+    <details>
+      <summary>Nivell 2 Exercici 4</summary>
+      <p>Funció de fletxa dins d'un loop: Crea una funció anomenada printNumbers que accepti un array de <br>
+        números i utilitzi un loop for per imprimir cada número a la consola utilitzant una funció de fletxa.</p>
+      <button onclick="printNumbers(miArray)">Imprime números por consola</button>
+    </details>
+    <details>
+      <summary>Nivell 3 Exercici 5</summary>
+      <p>Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que imprimeixi un missatge a la <br>
+        consola després d'esperar 3 segons.</p>
+      <button onclick="setTimeout(imprimeMensaje, 3000)">Activa mensaje secreto</button>
+      <p id="resultado5"></p>
+    </details>
+  <h3>Bloc 1.2: Operador ternari</h3>
+    <details>
+      <summary>Nivell 1 Exercici 1</summary>
+      <p>Operador ternari bàsic: Escriu una funció potConduir que accepti l'edat com a paràmetre i utilitzi<br>
+         l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar <br>
+         'Pots conduir'. Si no, ha de retornar 'No pots conduir'.</p>
+         <p>
+          <input id="edad" type="number" placeholder="Introduzca su edad" />
+        </p>
+        <button onclick="potConduir(edad.value)">¿Puedo conducir?</button>
+        <p id="resultado6"></p>
+    </details>
+  
+  <script src="./bloque1.js"></script>
+</body>
+</html>
