@@ -243,17 +243,143 @@ function main1 (){
   document.getElementById("resultado26").innerHTML = `El resto de cosas las dejaré en la mochila: ${elResto}`
 }
 
+/*Nivell 3 Exercici 5
+Spread en Funcions: Crea una funció que accepti tres arguments. Després, crea una array amb tres elements i crida la funció 
+utilitzant l'operador spread amb aquesta array.*/
+function main2(){
+  let arrayMiau = ["gato1", "gato2", "gato3"];
+  miau(...arrayMiau);
+}
+
+function miau(arg1, arg2, arg3){
+  document.getElementById("resultado27").innerHTML = arg1;
+  document.getElementById("resultado28").innerHTML = arg2;
+  document.getElementById("resultado29").innerHTML = arg3;
+}
+
+/*Nivell 3 Exercici 6
+Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. Utilitza l'operador spread per a fusionar aquests 
+dos objectes en un de nou.*/
+function main3(){
+  let vehiculo = {
+    marca: 'Renault',
+    matricula: 124569
+  };
+  let casa = {
+    plantas: 3,
+    nombre: `Ca' la Lola`
+  };
+  
+  let vehiculoCasa = {...vehiculo, ...casa};
+  document.getElementById("resultado30").innerHTML = `EL primer objeto es vehículo: ${vehiculo.marca}, ${vehiculo.matricula}`;
+  document.getElementById("resultado31").innerHTML = `EL segundo objeto es casa: ${casa.plantas}, ${casa.nombre}`;
+  document.getElementById("resultado32").innerHTML = `Este es el resultado de unir ambos objetos: ${vehiculoCasa.marca}; 
+  ${vehiculoCasa.matricula}, ${vehiculoCasa.plantas}, ${vehiculoCasa.nombre}`;
+}
 
 
 
+                                                  //Bloc 1.5: Array transformations
+
+
+/*Nivell 1 Exercici 1
+Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.*/
+function main4(){
+  let aNum = [1, 2, 3, 4];
+  let cuadrados = aNum.map(function(num){
+  console.log(`El cuadrado de ${num} es ${(Math.pow(num, 2))}`);
+});
+}
+
+/*Nivell 1 Exercici 2
+Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.*/
+function main5(){
+  let aNum = [1, 2, 3, 4];
+  let parells = aNum.filter(value => value % 2 === 0);
+  document.getElementById("resultado33").innerHTML = `Nueva array con los valores pares de la array original: ${parells}`;
+}
+
+/*Nivell 1 Exercici 3
+Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.*/
+function main6(){
+  let aNum = [1, 10 , 8, 11];
+  let mayorDiez = aNum.find(value => value > 10);
+  document.getElementById("resultado34").innerHTML = `El primer valor mayor de 10 de la array es: ${mayorDiez}`;
+}
+
+/*Nivell 1 Exercici 4
+Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.*/
+function main7(){
+  let aNum = [13, 7, 8, 21];
+  let sumaTotal = aNum.reduce((acumulador, valorActual) => {
+    return acumulador + valorActual;
+  }, 0);
+  document.getElementById("resultado35").innerHTML = `La suma de todos los números de la array es: ${sumaTotal}`;
+}
+/*Nivell 2 Exercici 5
+Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea una funció en una sola línia que faci el següent:
+-Filtra els nombres majors o iguals a 10.
+-Multiplica cada nombre filtrat per 2.
+-Calcula la suma dels nombres filtrats i multiplicats per 2.
+-La funció ha de retornar el resultat de la suma.*/
+function main8(){
+  let aNum = [1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9];
+  let suma = ((aNum.filter(value => value >= 10)).map(value => value *2)).reduce(((acumulador, valorActual) => acumulador += valorActual), 0);
+  console.log(suma);
+  document.getElementById("resultado36").innerHTML = `El resultado de esta locura es: ${suma}`;
+}
+/*Nivell 3 Exercici 6
+Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament*/
+function main9(){
+  let aNum = [11, 12, 13, 14];
+  let todos = aNum.every(value => value > 10);
+  let alguno = aNum.some(value => value > 10);
+
+  console.log(todos);
+  console.log(alguno);
+  document.getElementById("resultado37").innerHTML = `¿Son todos los números de la array mayores de 10?: ${todos}`;
+  document.getElementById("resultado38").innerHTML = `¿Hay algún número en la array que sea mayor que 10?: ${alguno}`;
+}
 
 
 
+                                                  //Bloc 1.5: Bloc 1.6: Array loops
+                                                  
+/*Nivell 1 Exercici 1
+forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];*/                                                  
+function main10(){
+  let aNoms = ['Anna', 'Bernat', 'Clara'];
+  document.getElementById("resultado39").innerHTML = `Los nombre de la array aparecerán en la consola ==>`;
+  aNoms.forEach(value => console.log(value));
+}
 
+/*Nivell 1 Exercici 2
+for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];*/ 
+function main11(){
+  let aNoms = ['Anna', 'Bernat', 'Clara'];
+  document.getElementById("resultado40").innerHTML = `Los nombre de la array aparecerán en la consola ==>`;
+  for(let value of aNoms){
+    console.log(value);
+  }
+}
 
+/*Nivell 1 Exercici 3
+filter: Teniu una array de números. Utilitza filter per a crear una nova array que només contingui els números parells. let numeros = [1, 2, 3, 4, 5, 6];*/ 
+function main12(){
+  let aNums = [1, 2, 3, 4, 5, 6];
+  let parells = aNums.filter(value => value % 2 === 0);
+  document.getElementById("resultado41").innerHTML = `Nueva array con los valores pares de la array original: ${parells}`;
+}
 
-
-
+/*Nivell 2 Exercici 4
+for-in: Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; Utilitza un bucle for-in per a 
+imprimir a la consola cada clau i el seu valor corresponent.*/ 
+function main13(){
+  let persona = {nom: "Ona", edat: 25, ciutat: 'Barcelona'};
+  for (const propiedad in persona) {
+    console.log(`${propiedad}: ${persona[propiedad]}`);
+  }
+}
 
 
 
