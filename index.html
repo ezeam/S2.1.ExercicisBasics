@@ -61,6 +61,152 @@
         <button onclick="potConduir(edad.value)">¿Puedo conducir?</button>
         <p id="resultado6"></p>
     </details>
+    <details>
+      <summary>Nivell 1 Exercici 2</summary>
+      <p>Ús amb operadors de comparació: Escriu una expressió que utilitzi l'operador ternari per determinar quin<br>
+        dels dos nombres donats (num1 i num2) és més gran. Si num1 és més gran, retorna 'num1 és més gran'.<br>
+        Si no, retorna 'num2 és més gran'.</p>
+        <p>
+          <input id="numUsuario1" type="number" placeholder="Introduzca un número" />
+        </p>
+        <p>
+          <input id="numUsuario2" type="number" placeholder="Introduzca un número" />
+        </p>
+        <button onclick="esMesGran(numUsuario1.value, numUsuario2.value)">¿Cual es mayor?</button>
+        <p id="resultado7"></p>
+    </details>
+    <details>
+      <summary>Nivell 2 Exercici 3</summary>
+      <p>1-Ús enllaçat d'operadors ternaris: Escriu una expressió que utilitzi enllaços d'operadors ternaris per<br>
+        determinar si un número és positiu, negatiu o zero.</p>
+        <p>
+          <input id="n1" type="number" placeholder="Introduzca un número" />
+        </p>
+        <button onclick="categoria(n1.value)">+ / - / 0</button>
+        <p id="resultado8"></p>
+
+      <p>2-Operador ternari amb funcions: Crea una funció trobarMaxim que accepti tres paràmetres (a, b, c) i utilitzi<br>
+        l'operador ternari per determinar el valor màxim.</p>
+        <p>
+          <input id="nu1" type="number" placeholder="Introduzca un número" />
+        </p>
+        <p>
+          <input id="nu2" type="number" placeholder="Introduzca un número" />
+        </p>
+        <p>
+          <input id="nu3" type="number" placeholder="Introduzca un número" />
+        </p>
+        <button onclick="trobarMaxim(nu1.value, nu2.value, nu3.value)">¿Cual es mayor?</button>
+        <p id="resultado9"></p>
+    </details>
+    <details>
+      <summary>Nivell 3 Exercici 4</summary>
+      <p>Operador ternari dins un bucle: Escriu una funció parOImpar que accepti un array de números i utilitzi un bucle per a recórrer l'array. 
+        Dins del bucle, utilitza l'operador ternari per a determinar si cada número és parell o imparell.</p>
+        <button onclick="llamaParOImpar()">¿Par o impar?</button>
+        <p id="resultado7"></p>
+    </details>
+    <h3>Bloc 1.3: Callbacks</h3>
+    <details>
+      <summary>Nivell 1 Exercici 1</summary>
+      <p>Callback bàsic: Escriu una funció anomenada processar que accepti dos paràmetres: un nombre i una funció de callback. La funció processar<br> 
+        ha d'invocar la funció de callback, passant el nombre com a paràmetre.</p>
+         <p>
+          <input id="nome" type="text" placeholder="Introduzca su nombre" />
+        </p>
+        <button onclick="processar(nome.value, myCallback)">Salúdame</button>
+        <p id="resultado10"></p>
+    </details>
+    <details>
+      <summary>Nivell 1 Exercici 2</summary>
+      <p>Callbacks amb operacions matemàtiques: Escriu una funció calculadora que accepti tres<br> 
+        paràmetres: dos nombres i una funció de callback. La funció calculadora ha d'invocar la funció <br>
+        de callback amb els dos nombres com a paràmetres. Després, crida calculadora amb una funció que <br>
+        faci la suma dels dos nombres.</p>
+        <p>
+          <input id="n5" type="number" placeholder="Introduzca un número" />
+        </p>
+        <p>
+          <input id="n6" type="number" placeholder="Introduzca un número" />
+        </p>
+        <button onclick="calculadora(n5.value, n6.value, callbackSuma)">Suma</button>
+        <p id="resultado11"></p>
+    </details>
+    <details>
+      <summary>Nivell 2 Exercici 3</summary>
+      <p>Ús de callbacks en funcions asíncrones: Escriu una funció esperarISaludar que accepti dos paràmetres:<br>
+         un nom i una funció de callback. La funció ha d'esperar 2 segons i llavors invocar la funció de callback,<br>
+         passant el nom com a paràmetre.</p>
+        <p>
+          <input id="name1" type="text" placeholder="Introduzca su nombre" />
+        </p>
+        <button onclick="esperarISaludar(name1.value, callbackSaluda)">Salúdame en 2 segundos</button>
+      <p id="resultado12"></p>
+    </details>
+    <details>
+      <summary>Nivell 2 Exercici 4</summary>
+      <p>Callbacks amb arrays: Escriu una funció processarElements que accepti dos paràmetres: un array i una funció de<br>
+        callback. La funció processarElements ha d'invocar la funció de callback per cada element de l'array.</p>
+        <button onclick="llamaAProcesa()">Listado de números por consola</button>
+    </details>
+    <details>
+      <summary>Nivell 3 Exercici 5</summary>
+      <p>Escriu una funció processarCadena que accepti dos paràmetres: una cadena de caràcters i una funció de callback.<br>
+         La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la<br>
+         cadena transformada.</p>
+        <p>
+          <input id="palabra" type="text" placeholder="Introduzca una palabra" />
+        </p>
+        <button onclick="processarCadena(palabra.value, callbackMayuscula)">Convierte a mayúscula</button>
+      <p id="resultado13"></p>
+    </details>
+    <h3>Bloc 1.4: Rest & Spread operators</h3>
+    <details>
+      <summary>Nivell 1 Exercici 1</summary>
+      <p>Operador Spread en Arrays: Crea dues arrays, array1 i array2. Utilitza l'operador spread per a crear una tercera array
+         que contingui tots els elements de array1 i array2.</p>
+        <button onclick="activar()">Imprime números ordenados</button>
+      <p id="resultado14"></p>
+    </details>
+    <details>
+      <summary>Nivell 1 Exercici 2</summary>
+      <p>Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre<br>
+         indeterminat d'arguments i retornar la seva suma.</p>
+      <button onclick="activa()">Suma</button>
+      <p id="resultado15"></p>
+      <p id="resultado16"></p>
+      <p id="resultado17"></p>
+      <p id="resultado18"></p>
+    </details>
+    <details>
+      <summary>Nivell 2 Exercici 3</summary>
+      <p>Copiant objectes amb Spread: Crea un objecte 'objecte1'. Després crea un segon objecte, 'objecte2', que sigui una còpia<br> 
+        de 'objecte1' utilitzant l'operador spread. Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.</p>
+      <button onclick="main()">Cambia objeto</button>
+      <p id="resultado19"></p>
+      <p id="resultado20"></p>
+      <p id="resultado21"></p>
+      <p id="resultado22"></p>
+    </details>
+    <details>
+      <summary>Nivell 2 Exercici 4</summary>
+      <p>Rest en Destructuring: Crea una array amb diversos elements. Utilitza destructuring i l'operador rest per a assignar els primers<br>
+        dos elements a variables, i després assignar la resta dels elements a una tercera variable.</p>
+      <button onclick="main1()">Reasigna</button>
+      <p id="resultado23"></p>
+      <p id="resultado24"></p>
+      <p id="resultado25"></p>
+      <p id="resultado26"></p>
+    </details>
+
+
+
+
+    
+
+    
+    
+   
   
   <script src="./bloque1.js"></script>
 </body>
