@@ -194,7 +194,7 @@ function activar(){
   document.getElementById("resultado14").innerHTML = array3;
 }
 
-/*Nivell 1 Exercici 2
+/*Nivell 1 Exercici 2 
 Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat
 d'arguments i retornar la seva suma.*/
 function activa(){
@@ -329,7 +329,7 @@ function main8(){
   document.getElementById("resultado36").innerHTML = `El resultado de esta locura es: ${suma}`;
 }
 /*Nivell 3 Exercici 6
-Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament*/
+Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament.*/
 function main9(){
   let aNum = [11, 12, 13, 14];
   let todos = aNum.every(value => value > 10);
@@ -381,9 +381,142 @@ function main13(){
   }
 }
 
+/*Nivell 2 Exercici 5
+for-of amb break: Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5,
+llavors atura el bucle: let numeros = [1, 2, 3, 4, 5, 6];*/ 
+function main14(){
+  let arrayNums = [1, 2, 3, 4, 5, 6];
+  for (const value of arrayNums) {
+    if(value === 6){
+      break;
+    }
+  console.log(value);
+  }
+}
+
+/*Nivell 3 Exercici 6
+for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index):
+ let noms = ['Anna', 'Bernat', 'Clara']*/ 
+ function main15(){
+  let arrayNoms = ['Anna', 'Bernat', 'Clara'];
+  for (const [indice, nom] of arrayNoms.entries()) {    
+    console.log(`Índice: ${indice}, Nom: ${nom}`);
+  }
+}
 
 
+                                                //Bloc 1.7: Promises & Async/Await
 
+/*Nivell 1 Exercici 1
+Creació d'una Promesa: Crea una promesa que es resolgui després de 2 segons i que retorni la cadena de text 'Hola, món'.*/ 
+function main16(){
+  const promesa = new Promise((resuelve, rechaza) => {
+    setTimeout(() => {
+      resuelve('Hola, mundo');
+    }, 2000); 
+  });
+}
 
+/*Nivell 1 Exercici 2
+Utilització d'una Promesa: Utilitza la promesa creada en l'exercici anterior. Crea un .then que imprimeixi el resultat a la consola.*/ 
+function main17(){
+  const promesa = new Promise((resuelve, rechaza) => {
+    setTimeout(() => {
+      resuelve('Hola, mundo');
+    }, 2000); 
+  });
+  
+  promesa.then((resultado) => {
+    console.log(resultado);
+  });
+}
 
+/*Nivell 1 Exercici 3
+Promesa amb reject: Crea una promesa que es resolgui després de 2 segons si l'input és igual a 'Hola', i que la rebutgi si 
+l'input és qualsevol altra cosa.*/ 
+function main18(){
+  let palabraUsuario = document.getElementById("hola").value;
+  let diHola = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if(palabraUsuario === "Hola" || palabraUsuario === "hola"){
+          resolve("La promesa se ha resuelto correctamente");
+        }
+        else{
+          reject(new Error("La palabra introducida no es correcta"));
+        }
+      }, 2000);
+    })
+  }
+  diHola(palabraUsuario)
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+}
 
+/*Nivell 2 Exercici 4
+Ús de async/await: Escriu una funció asíncrona que utilitzi la funció await per a esperar el resultat de la promesa creada a l'exercici 1,
+i que després imprimeixi aquest resultat a la consola.*/ 
+function main19(){
+  const promesa = () => {
+    return new Promise((resuelve, rechaza) => {
+      setTimeout(() => {
+        resuelve('Hola, mundo');
+      }, 2000); 
+    });
+  } 
+
+  async function fetchingData(){
+    const mensaje = await promesa();
+    console.log(mensaje);
+  }
+  fetchingData();
+}
+
+/*Nivell 2 Exercici 5
+Gestió d'errors amb async/await: Modifica la funció de l'exercici 4 per a que capturi qualsevol possible error utilitzant un bloc try/catch.*/ 
+function main20(){
+  let bollPruebas = true; //CAMBIAR A FALSE PARA VER LAS DOS OPCIONES DEL TRY CATCH
+  const promesa = () => {
+    return new Promise((resuelve, rechaza) => {
+      if(bollPruebas){
+        rechaza(new Error("ERROR NO MUY INTUITIVO"));
+      }
+      else{
+        setTimeout(() => {
+          resuelve('Hola, mundo');
+        }, 2000);
+      }      
+    });
+  } 
+
+  async function fetchingData(){
+    try{
+      const mensaje = await promesa();
+      console.log(mensaje);
+    } catch (error){
+      console.log(error.message);
+    }   
+  }
+  fetchingData();
+}
+
+/*Nivell 3 Exercici 6
+Promise.all: Crea dues promeses que es resolguin després de 2 i 3 segons, respectivament. Utilitza Promise.all per a esperar 
+que ambdues promeses es resolguin, i imprimeix els resultats a la consola.*/ 
+function main21 (){        
+function esperar(ms) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
+}
+const promesa1 = esperar(2000).then(() => "Hola, soy la promesa 1");
+const promesa2 = esperar(3000).then(() => "Hola, soy la promesa 2");
+
+Promise.all([promesa1, promesa2])
+  .then(resultats => {
+    console.log("Resultados:", resultats);
+  })
+  .catch(error => {
+    console.error("Ha habido un error:", error);
+  });
+}
